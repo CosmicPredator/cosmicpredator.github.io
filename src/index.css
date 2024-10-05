@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #6C63FF;
+  --secondary: #FF6584;
+  --background-light: rgba(255, 255, 255, 0.8);
+  --background-dark: rgba(0, 0, 0, 0.8);
+  --text-light: #333333;
+  --text-dark: #FFFFFF;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.light {
+  color: var(--text-light);
+}
+
+.dark {
+  color: var(--text-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.tech-border {
+  @apply border-2 border-primary rounded-lg p-4 transition-all duration-300 hover:shadow-lg hover:scale-105;
+}
+
+.content-wrapper {
+  @apply min-h-screen;
+}
+
+.hero-section {
+  @apply min-h-screen flex items-center justify-center;
+}
+
+.section-bg {
+  @apply rounded-lg;
+}
+
+.light .section-bg {
+  background-color: var(--background-light);
+}
+
+.dark .section-bg {
+  background-color: var(--background-dark);
+}
+
+.section-spacing {
+  @apply py-8;
+}
