@@ -34,8 +34,7 @@ const CONFIG = {
       projects: [
         {
           title: 'AniMoe for AniList',
-          description:
-            'An Unofficial Windows 10 & 11 app for AniList.co',
+          description: 'An Unofficial Windows 10 & 11 app for AniList.co',
           imageUrl:
             'https://raw.githubusercontent.com/CosmicPredator/AniMoe/refs/heads/develop/AniMoe.App/Assets/AniMoeLogo.png',
           link: 'https://github.com/CosmicPredator/AniMoe',
@@ -51,7 +50,11 @@ const CONFIG = {
       ],
     },
   },
-  seo: { title: 'Portfolio of Cosmic Predator', description: 'Go, .NET/C# and Rust Dev', imageURL: 'https://files.catbox.moe/tdju5b.jpeg' },
+  seo: {
+    title: 'Portfolio of Cosmic Predator',
+    description: 'Go, .NET/C# and Rust Dev',
+    imageURL: 'https://files.catbox.moe/42v44s.jpeg',
+  },
   social: {
     linkedin: 'baranikumar-srinivasan-b7374b1ba',
     x: 'cosmic_predator',
