@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   // Relative base so the build works both at a user page root
   // (username.github.io) and a project subpath (username.github.io/repo).
-  base: './',
+  base: '/',
   plugins: [react()],
 })
