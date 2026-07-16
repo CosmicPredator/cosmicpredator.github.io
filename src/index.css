@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background-color: #0f0a0d;
+  color: #f0e8e6;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Blueprint grid background */
+.bg-blueprint {
+  background-image:
+    linear-gradient(rgba(255, 158, 100, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 158, 100, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-blueprint-fine {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 160px 160px, 160px 160px, 32px 32px, 32px 32px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Radial spotlight glow */
+.glow-radial {
+  background: radial-gradient(600px circle at 50% 0%, rgba(255, 158, 100, 0.16), transparent 70%);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #140e12;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d2e37;
+  border-radius: 6px;
+  border: 2px solid #140e12;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #573f4c;
+}
+
+/* Selection */
+::selection {
+  background: rgba(255, 158, 100, 0.32);
+  color: #ffffff;
+}
+
+/* Gradient text */
+.text-gradient {
+  background: linear-gradient(120deg, #ffffff 0%, #ffbe93 40%, #ff7a5c 72%, #fb7185 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-glow {
+  text-shadow: 0 0 24px rgba(255, 158, 100, 0.4);
+}
+
+/* Diagram card frame with corner ticks */
+.diagram-frame {
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(33, 24, 29, 0.6), rgba(20, 14, 18, 0.55));
+  backdrop-filter: blur(6px);
+}
+.diagram-frame::before,
+.diagram-frame::after {
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: 1px solid rgba(255, 158, 100, 0.6);
+  pointer-events: none;
+}
+.diagram-frame::before {
+  top: -1px;
+  left: -1px;
+  border-right: none;
+  border-bottom: none;
+}
+.diagram-frame::after {
+  bottom: -1px;
+  right: -1px;
+  border-left: none;
+  border-top: none;
+}
+
+/* Node card hover accent */
+.node-card {
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
+}
+.node-card:hover {
+  border-color: rgba(255, 158, 100, 0.5);
+  box-shadow: 0 0 0 1px rgba(255, 158, 100, 0.14), 0 18px 50px -20px rgba(255, 158, 100, 0.4);
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  animation: marquee 30s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.mono-label {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* Animated connector line dash */
+.flow-line {
+  stroke-dasharray: 6 6;
+  animation: flowdash 1s linear infinite;
+}
+@keyframes flowdash {
+  to { stroke-dashoffset: -12; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
