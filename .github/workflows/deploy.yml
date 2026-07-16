@@ -30,7 +30,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # Use `npm install` (not `npm ci`) with an explicit dev include so the
+        # build's type packages (vite/client, @types/node) are always present,
+        # even if the committed lockfile is stale or NODE_ENV=production.
+        run: npm install --include=dev
 
       - name: Build
         run: npm run build
